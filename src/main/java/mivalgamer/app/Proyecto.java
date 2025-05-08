@@ -238,14 +238,21 @@ public class Proyecto {
                 System.out.println();
             }
 
-            System.out.println("\nSelecciona un juego para ver detalles (0 para volver): ");
-            int seleccion = leerEntero();
-            scanner.nextLine();
+            while (true) {
+                System.out.print("\nSelecciona un juego para ver detalles (0 para volver): ");
+                int seleccion = leerEntero();
+                scanner.nextLine();
 
-            if (seleccion > 0 && seleccion <= juegos.size()) {
-                mostrarDetallesJuego(juegos.get(seleccion - 1));
+                if (seleccion == 0) {
+                    break;
+                }
+                if (seleccion > 0 && seleccion <= juegos.size()) {
+                    mostrarDetallesJuego(juegos.get(seleccion - 1));
+                    break;
+                } else {
+                    System.out.println("Ingrese un juego válido.");
+                }
             }
-
 
         } catch (SQLException ex) {
             LOGGER.log(Level.SEVERE, "Error mostrando catálogo", ex);
@@ -331,20 +338,33 @@ public class Proyecto {
                 scanner.nextLine();
 
                 if (opcion == 1) {
-                    System.out.print("\nSeleccione un juego para ver detalles (0 para volver): ");
-                    int juegoSeleccionado = leerEntero();
-                    scanner.nextLine();
-                    if (juegoSeleccionado > 0 && juegoSeleccionado <= juegos.size()) {
-                        mostrarDetallesJuego(juegos.get(juegoSeleccionado - 1));
+                    while (true) {
+                        System.out.print("\nSeleccione un juego para ver detalles (0 para volver): ");
+                        int juegoSeleccionado = leerEntero();
+                        scanner.nextLine();
+                        if (juegoSeleccionado == 0) break;
+                        if (juegoSeleccionado > 0 && juegoSeleccionado <= juegos.size()) {
+                            mostrarDetallesJuego(juegos.get(juegoSeleccionado - 1));
+                            break;
+                        } else {
+                            System.out.println("Ingrese un juego válido.");
+                        }
                     }
                 } else if (opcion == 2) {
-                    System.out.print("\nSeleccione un juego para agregar al carrito (0 para volver): ");
-                    int juegoSeleccionado = leerEntero();
-                    scanner.nextLine();
-                    if (juegoSeleccionado > 0 && juegoSeleccionado <= juegos.size()) {
-                        agregarAlCarrito(juegos.get(juegoSeleccionado - 1));
+                    while (true) {
+                        System.out.print("\nSeleccione un juego para agregar al carrito (0 para volver): ");
+                        int juegoSeleccionado = leerEntero();
+                        scanner.nextLine();
+                        if (juegoSeleccionado == 0) break;
+                        if (juegoSeleccionado > 0 && juegoSeleccionado <= juegos.size()) {
+                            agregarAlCarrito(juegos.get(juegoSeleccionado - 1));
+                            break;
+                        } else {
+                            System.out.println("Ingrese un juego válido.");
+                        }
                     }
                 }
+
             }
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Error al obtener juegos por plataforma", e);
@@ -358,30 +378,49 @@ public class Proyecto {
             System.out.println("\n=== JUEGOS EN DESCUENTO ===");
             mostrarListaJuegos(juegos);
 
-            System.out.println("\n1. Seleccionar juego para ver detalles");
-            System.out.println("2. Seleccionar juego para agregar al carrito");
-            System.out.println("0. Volver");
-            System.out.print("Seleccione una opción: ");
-            int opcion = leerEntero();
-            scanner.nextLine();
+            while (true) {
+                System.out.println("\n1. Seleccionar juego para ver detalles");
+                System.out.println("2. Seleccionar juego para agregar al carrito");
+                System.out.println("0. Volver");
+                System.out.print("Seleccione una opción: ");
+                int opcion = leerEntero();
+                scanner.nextLine();
 
-            if (opcion == 1) {
-                System.out.print("\nSeleccione un juego para ver detalles (0 para volver): ");
-                int seleccion = leerEntero();
-                scanner.nextLine();
-                if (seleccion > 0 && seleccion <= juegos.size()) {
-                    mostrarDetallesJuego(juegos.get(seleccion - 1));
-                }
-            } else if (opcion == 2) {
-                System.out.print("\nSeleccione un juego para agregar al carrito (0 para volver): ");
-                int seleccion = leerEntero();
-                scanner.nextLine();
-                if (seleccion > 0 && seleccion <= juegos.size()) {
-                    agregarAlCarrito(juegos.get(seleccion - 1));
+                if (opcion == 1) {
+                    while (true) {
+                        System.out.print("\nSeleccione un juego para ver detalles (0 para volver): ");
+                        int seleccion = leerEntero();
+                        scanner.nextLine();
+                        if (seleccion == 0) break;
+                        if (seleccion > 0 && seleccion <= juegos.size()) {
+                            mostrarDetallesJuego(juegos.get(seleccion - 1));
+                            break;
+                        } else {
+                            System.out.println("Ingrese un juego válido.");
+                        }
+                    }
+                    break;
+                } else if (opcion == 2) {
+                    while (true) {
+                        System.out.print("\nSeleccione un juego para agregar al carrito (0 para volver): ");
+                        int seleccion = leerEntero();
+                        scanner.nextLine();
+                        if (seleccion == 0) break;
+                        if (seleccion > 0 && seleccion <= juegos.size()) {
+                            agregarAlCarrito(juegos.get(seleccion - 1));
+                            break;
+                        } else {
+                            System.out.println("Ingrese un juego válido.");
+                        }
+                    }
+                    break;
+                } else if (opcion == 0) {
+                    break;
+                } else {
+                    System.out.println("Ingrese una opción válida.");
                 }
             }
         } catch (SQLException e) {
-
             LOGGER.log(Level.SEVERE, "Error al obtener juegos en descuento", e);
             System.out.println("Error al cargar los juegos en descuento");
         }

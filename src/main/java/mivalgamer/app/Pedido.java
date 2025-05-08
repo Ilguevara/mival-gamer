@@ -151,9 +151,9 @@ public class Pedido {
                     stmt.setString(4, keyActivacion);
                     stmt.addBatch();
 
-                    LOGGER.info("Juego " + item.getJuego().getTitulo() + " agregado a biblioteca");
+                    System.out.println("Juego " + item.getJuego().getTitulo() + " agregado a biblioteca");
                 } else {
-                    LOGGER.info("Juego " + item.getJuego().getTitulo() + " ya está en la biblioteca");
+                    System.out.println("Juego " + item.getJuego().getTitulo() + " ya está en la biblioteca");
                 }
             }
             stmt.executeBatch();
