@@ -46,11 +46,12 @@ public class PedidoFactory {
                 return pedido;
             } else {
                 connection.rollback();
-                throw new SQLException("El pago no pudo ser procesado");
+                //LOGGER.log(Level.SEVERE, "Error al crear pedido");
+                return null;
             }
         } catch (SQLException e) {
             connection.rollback();
-            LOGGER.log(Level.SEVERE, "Error al crear pedido", e);
+            //LOGGER.log(Level.SEVERE, "Error al crear pedido", e);
             throw e;
         } finally {
             connection.setAutoCommit(true);

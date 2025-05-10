@@ -57,7 +57,7 @@ public class Pedido {
             guardarPedidoEnBD();
             guardarItemsPedido();
             connection.commit();
-            System.out.println("¡Tu pedido ha sido guardado exitosamente!");
+            //System.out.println("¡Tu pedido ha sido guardado exitosamente!");
         } catch (SQLException e) {
             connection.rollback();
             System.out.println("Ocurrió un error al guardar tu pedido. Por favor, inténtalo de nuevo.");
@@ -109,13 +109,44 @@ public class Pedido {
         MetodoPago metodo = MetodoPago.cargarDesdeBD(metodoPagoId, connection);
         double total = calcularTotal();
 
-        if (metodo.procesarPago(total)) {
-            actualizarEstado(EstadoPedido.PAGADO);
-            registrarEnHistorial(total);
-            agregarABiblioteca();
-            return true;
+        boolean hasStock=actualizarStock(getItems());
+        if(hasStock){
+            if (metodo.procesarPago(total)) {
+                actualizarEstado(EstadoPedido.PAGADO);
+                registrarEnHistorial(total);
+                agregarABiblioteca();
+                return true;
+            }
         }
+        System.out.println("El pago no pudo ser procesado. Por favor, intente de nuevo.");
         return false;
+    }
+    private boolean actualizarStock(List<ItemPedido> items) throws SQLException {
+        if (items == null || items.isEmpty()) {
+            return false;
+        }
+        String sqlUpdate = "UPDATE videojuego SET stock = stock - ? WHERE id_videojuego = ?";
+        String sql = "SELECT stock FROM videojuego WHERE id_videojuego = ?";
+        for (ItemPedido item : items) {
+            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+                stmt.setLong(1, item.getJuego().getIdVideojuego());
+                ResultSet rs = stmt.executeQuery();
+
+                while (rs.next()) {
+                    int stock = rs.getInt("stock");
+                    if (stock < item.getCantidad()) {
+                        System.out.println("No hay suficiente stock del juego "+ item.getJuego().getTitulo());
+                        return false;
+                    }
+                }
+            }
+            try (PreparedStatement stmt = connection.prepareStatement(sqlUpdate)) {
+                stmt.setInt(1, item.getCantidad());
+                stmt.setLong(2, item.getJuego().getIdVideojuego());
+                stmt.executeUpdate();
+            }
+        }
+        return true;
     }
 
     private void registrarEnHistorial(double total) throws SQLException {

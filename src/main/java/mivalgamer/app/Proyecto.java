@@ -774,7 +774,7 @@ public class Proyecto {
             usuarioActual.setCarrito(null); // Vaciar carrito al finalizar la compra
 
         } catch (Exception e) {
-            System.out.println("Error al finalizar la compra: " + e.getMessage());
+            //System.out.println("Error al finalizar la compra: " + e.getMessage());
         }
     }
 
