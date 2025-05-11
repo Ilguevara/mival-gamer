@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 public class ConexionBaseDatos {
     private static final Logger LOGGER = Logger.getLogger(ConexionBaseDatos.class.getName());
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/mival_gamer";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "root";
+    private static final String DB_URL = "jdbc:mysql://bkgshsddffwp1gdiqqcl-mysql.services.clever-cloud.com/bkgshsddffwp1gdiqqcl";
+    private static final String DB_USER = "uzjpyykc41cm3273";
+    private static final String DB_PASS = "oq4aVRScMPmmRQS6SciH";
 
     private Connection connection;
 
