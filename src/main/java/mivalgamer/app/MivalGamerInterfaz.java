@@ -1,78 +1,74 @@
 package mivalgamer.app;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import mivalgamer.app.Controllers.LoginController;
-import  mivalgamer.app.Controllers.RegisterController;
+
+import java.io.InputStream;
+import java.util.List;
+import java.util.Arrays;
 
 public class MivalGamerInterfaz extends Application {
-
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/tu_base_de_datos";
-    private static final String DB_USER = "tu_usuario";
-    private static final String DB_PASSWORD = "tu_contraseña";
-
-    private Connection connection;
 
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Crear una conexión con la base de datos
-            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            System.out.println("Conexión a la base de datos establecida.");
-            mostrarPantallaLogin(primaryStage);
-        } catch (SQLException e) {
-            System.err.println("Error al conectar a la base de datos: " + e.getMessage());
-        }
-    }
+            // Cargar fuentes personalizadas
+            cargarFuentes("/RecursosGlobales/Tipografia/museo-sans/", Arrays.asList(
+                    "MuseoSans_500.otf",
+                    "MuseoSans_700.otf",
+                    "MuseoSans_900.otf",
+                    "MuseoSans-100.otf",
+                    "MuseoSans-300.otf"
+            ));
 
-    private void mostrarPantallaLogin(Stage stage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/proyecto/views/Login.fxml"));
-            Parent root = loader.load();
+            // Cargar pantalla de login como inicial
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Login.fxml"));
+            StackPane root = (StackPane) loader.load();
 
-            // Pasar la conexión al controlador
-            LoginController loginController = loader.getController();
-            loginController.setAutentificacion(new Autentificacion(connection));
+            Scene scene = new Scene(root, 1280, 720);
 
-            stage.setTitle("MiVal Gamer - Inicio de Sesión");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            System.err.println("No se pudo cargar la pantalla de inicio de sesión.");
+            // Aplicar el CSS de la aplicación
+            scene.getStylesheets().add(getClass().getResource("/Views/Estilos.css").toExternalForm());
+
+            primaryStage.setTitle("MivalGamer - Acceso");
+            primaryStage.setScene(scene);
+
+            // Pantalla completa
+            primaryStage.setFullScreen(true);
+            primaryStage.setFullScreenExitHint("");
+
+            // Establecer tamaño mínimo (opcional)
+            primaryStage.setMinWidth(800);
+            primaryStage.setMinHeight(600);
+
+            // Hacer responsive para que ocupe siempre todo el espacio
+            root.prefWidthProperty().bind(scene.widthProperty());
+            root.prefHeightProperty().bind(scene.heightProperty());
+
+            primaryStage.show();
+
+        } catch (Exception e) {
+            System.err.println("Error al iniciar la aplicación: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    private void mostrarPantallaRegistro(Stage stage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/proyecto/views/Register.fxml"));
-            Parent root = loader.load();
-
-            // Pasar la conexión al controlador
-            RegisterController registerController = loader.getController();
-            registerController.setAutentificacion(new Autentificacion(connection));
-
-            stage.setTitle("MiVal Gamer - Registro");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            System.err.println("No se pudo cargar la pantalla de registro.");
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void stop() throws Exception {
-        super.stop();
-        if (connection != null && !connection.isClosed()) {
-            connection.close();
-            System.out.println("Conexión con la base de datos cerrada.");
+    /** Carga varias fuentes desde la carpeta indicada bajo resources **/
+    private void cargarFuentes(String carpeta, List<String> archivos) {
+        for (String archivo : archivos) {
+            try (InputStream is = getClass().getResourceAsStream(carpeta + archivo)) {
+                if (is != null) {
+                    Font.loadFont(is, 12);
+                } else {
+                    System.err.println("Fuente no encontrada: " + archivo);
+                }
+            } catch (Exception e) {
+                System.err.println("Error al cargar fuente: " + archivo + " - " + e.getMessage());
+            }
         }
     }
 

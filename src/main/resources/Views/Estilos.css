@@ -1,0 +1,190 @@
+/* =============================
+   1. CONFIGURACIÓN GENERAL
+   ============================= */
+.root {
+    -fx-font-family: "Museo Sans";
+    -fx-padding: 5vw 10vw; /* Padding variable según el ancho de la pantalla */
+}
+@media screen and (max-width: 700px) {
+    .root {
+        -fx-padding: 10px !important;
+    }
+    .login-container {
+        -fx-padding: 0 8 !important;
+        -fx-background-radius: 15px !important;
+    }
+    .logo-text-part1, .logo-text-part2 {
+        -fx-font-size: 32px !important;
+    }
+    .login-title {
+        -fx-font-size: 15px !important;
+    }
+
+}
+
+/* =============================
+   2. TIPOGRAFÍA Y VARIANTES
+   ============================= */
+/* Pesos y tamaños de Museo Sans */
+.museo-900 {
+    -fx-font-family: "Museo Sans 900";
+}
+
+
+.museo-700 {
+    -fx-font-family: "Museo Sans 700";
+}
+
+.museo-500 {
+    -fx-font-family: "Museo Sans 500";
+}
+
+.museo-300 {
+    -fx-font-family: "Museo Sans 300";
+}
+
+.museo-100 {
+    -fx-font-family: "Museo Sans 100";
+}
+
+/* Tamaños de texto */
+.text-small {
+    -fx-font-size: 14px;
+}
+
+.text-medium {
+    -fx-font-size: 18px;
+}
+
+.text-large {
+    -fx-font-size: 24px;
+}
+
+.text-xlarge {
+    -fx-font-size: 32px;
+}
+
+.text-xxlarge {
+    -fx-font-size: 48px;
+}
+
+/* Contenedores */
+.login-container {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 40px;
+    -fx-padding: 0 48 ;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
+
+.register-container {
+    -fx-padding: 10 0 0 0;
+}
+
+/* =============================
+   4. COMPONENTES
+   ============================= */
+/* --- 4.1 Logo --- */
+.logo-text-part1 {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(220, 220, 220);  /* Gris claro */
+}
+
+.logo-text-part2 {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;  /* Blanco puro */
+}
+
+/* --- 4.2 Textos --- */
+.welcome-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: rgba(255, 255, 255, 0.9);  /* Blanco con 90% opacidad */
+    -fx-padding: 10 0 0 0;
+}
+
+.login-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-padding: 0 0 10 0;
+}
+
+/* --- 4.3 Campos de formulario --- */
+.input-field {
+    -fx-background-color: rgba(58, 58, 58, 0.85);  /* Blanco con 85% opacidad */
+    -fx-text-fill: #ffffff;  /* Texto negro */
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.55);  /* Placeholder gris oscuro */
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+}
+
+.input-field:focused {
+    -fx-border-color: #94B4C1;  /* Morado */
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+
+/* --- 4.4 Botones --- */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #c026d3, #af1c1c);  /* Degradado morado */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-background-radius: 40px;
+    -fx-cursor: hand;
+    -fx-min-width: 100%;
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #a21caf, #8f1919);  /* Degradado oscuro al hover */
+}
+
+/* --- 4.5 Enlaces --- */
+.register-container Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.register-container Hyperlink {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-underline: false;  /* Quita el subrayado */
+}
+
+.register-container Hyperlink:hover {
+    -fx-text-fill: #547792;  /* Rosa claro al hover */
+}
+
+/* =============================
+   5. UTILIDADES
+   ============================= */
+/* Clases de alineación */
+.text-center {
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.text-right {
+    -fx-text-alignment: right;
+    -fx-alignment: center-right;
+}
+
+/* Clases de espaciado */
+.margin-bottom {
+    -fx-margin-bottom: 10px;
+}
+
+.padding-standard {
+    -fx-padding: 10px;
+}
+
+/* Clases de efecto */
+.shadow-light {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.shadow-medium {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
