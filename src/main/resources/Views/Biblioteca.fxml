@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.BibliotecaController">
+    <stylesheets>
+        <URL value="@styles.css" />
+        <URL value="@playstation-styles.css" />
+    </stylesheets>
+
+    <!-- Capa de fondo: Imagen -->
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="true">
+        <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOPRINCIPAL.jpg" />
+    </ImageView>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" VBox.vgrow="ALWAYS">
+            <HBox styleClass="logo">
+                <ImageView fitHeight="50" fitWidth="150" preserveRatio="true" styleClass="logo-image">
+                    <image>
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOMIVALGAMER.png" />
+                    </image>
+                </ImageView>
+            </HBox>
+            <HBox styleClass="search-bar">
+                <ImageView fitHeight="14" fitWidth="14" styleClass="icon">
+                    <image>
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBUSCAR.png" />
+                    </image>
+                </ImageView>
+                <TextField promptText="Qué deseas buscar?" />
+            </HBox>
+
+            <VBox styleClass="menu">
+                <HBox onMouseClicked="#handleInicioClick" styleClass="menu-item">
+                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
+                        <image>
+                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOINICIO.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Inicio" textFill="WHITE" />
+                </HBox>
+
+                <HBox onMouseClicked="#handlePlataformaClick" styleClass="menu-item, active">
+                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
+                        <image>
+                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOPLATAFORMAS.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Plataformas" textFill="WHITE" />
+                </HBox>
+
+                <HBox styleClass="menu-item" onMouseClicked="#handleBibliotecaClick">
+                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
+                        <image>
+                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBIBLIOTECA.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="Biblioteca" textFill="WHITE" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+    <!-- Main Content -->
+    <center>
+        <StackPane>
+            <!-- Content Overlay -->
+            <VBox prefHeight="318.0" prefWidth="1073.0" styleClass="main-content">
+                <!-- Header -->
+                <HBox styleClass="header">
+                    <children>
+                        <Label styleClass="page-title" text="   Mi Biblioteca " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="42.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- Library Section -->
+                <VBox styleClass="library-section">
+                    <HBox styleClass="section-header">
+                        <Label styleClass="section-title" />
+                    </HBox>
+                </VBox>
+
+                <!-- Nuevo VBox agregado -->
+                <VBox opacity="0.18" prefHeight="200.0" prefWidth="1074.0" style="-fx-background-color: #1a4d4d; -fx-padding: 20px;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <children>
+                        <AnchorPane prefHeight="146.0" prefWidth="997.0" />
+                    </children>
+                </VBox>
+                <Label styleClass="results-count" />
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
