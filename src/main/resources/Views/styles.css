@@ -130,3 +130,10 @@
 .pc {
     -fx-effect: dropshadow(gaussian, rgba(100, 100, 100, 0.8), 25, 0, 0, 0);
 }
+.barralateral{
+    -fx-background-color: #00000059; /* negro con 35% de opacidad */
+}
+.barracentral{
+    -fx-background-color: #00000059; /* negro con 35% de opacidad */
+    -fx-background-radius: 10px;
+}
