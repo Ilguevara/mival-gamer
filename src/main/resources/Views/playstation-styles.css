@@ -72,8 +72,6 @@
 
 .game-category {
     -fx-text-fill: rgba(255, 255, 255, 0.8);
-    -fx-font-size: 16px;
-    -fx-font-family: 'Museo Sans';
 }
 
 .game-description {
@@ -112,23 +110,22 @@
 
 /* Games Grid */
 .games-grid {
-    -fx-padding: 10;
     -fx-hgap: 20;
-    -fx-vgap: 20;
+    -fx-vgap: 50;
 }
 
 .game-card {
-    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-background-color: transparent;
     -fx-background-radius: 10;
     -fx-padding: 0 0 10 0;
     -fx-spacing: 5;
-    -fx-alignment: center;
+    -fx-alignment: center-left;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);
-    -fx-min-width: 180;
-    -fx-max-width: 180;
-    -fx-min-height: 220;
-    -fx-max-height: 220;
+    -fx-min-width: 194;
+    -fx-max-width: 1194;
+    -fx-min-height: 250;
+    -fx-max-height: 250;
 }
 
 .game-card:hover {
@@ -146,27 +143,25 @@
 .game-title {
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 21 px;
     -fx-padding: 5 10 0 10;
     -fx-font-family: 'Museo Sans';
-    -fx-alignment: center;
-    -fx-text-alignment: center;
+    -fx-alignment: top-left;
+    -fx-text-alignment: top-left;
 }
 
 .game-price {
     -fx-text-fill: rgba(255, 255, 255, 0.7);
+    -fx-padding: 0 0 0 10;
     -fx-font-size: 12px;
-    -fx-padding: 0 10 5 10;
     -fx-font-family: 'Museo Sans';
-    -fx-alignment: center;
-    -fx-text-alignment: center;
+    -fx-alignment: top-left;
+    -fx-text-alignment: top-left;
 }
 
 /* Cart Section */
 .cart-section {
     -fx-background-color: rgba(26, 26, 26, 0.5);
-    -fx-min-width: 250px;
-    -fx-max-width: 250px;
     -fx-padding: 15;
     -fx-spacing: 10;
 }
@@ -189,9 +184,6 @@
     -fx-padding: 10;
     -fx-background-color: transparent;
     -fx-fit-to-width: true;
-    -fx-min-height: 200px;
-    -fx-pref-height: 300px;
-    -fx-max-height: 400px;
 }
 
 .cart-content .scroll-pane {
@@ -262,7 +254,7 @@
 
 .cart-total {
     -fx-spacing: 10;
-    -fx-alignment: center-right;
+    -fx-alignment: center;
 }
 
 .cart-total .label {
@@ -332,4 +324,30 @@
 .menu-item.active {
     -fx-background-color: rgba(255, 255, 255, 0.2);
 }
+.add-buttones {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-padding: 3 8;
+}
+.transparent-scrollpane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
 
+/* El contenido interno del scroll (el viewport) */
+.transparent-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+
+.transparent-scrollpane .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.2); /* Opcional: estiliza el "thumb" */
+}
+.modulosbuttones {
+    -fx-background-color: transparent;
+}
