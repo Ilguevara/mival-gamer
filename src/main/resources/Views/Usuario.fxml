@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<?import javafx.scene.layout.Pane?>
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.UsuarioController">
+    <stylesheets>
+        <URL value="@styles.css" />
+        <URL value="@playstation-styles.css" />
+        <URL value="@Estilos.css" />
+    </stylesheets>
+
+    <!-- Capa de fondo: Imagen -->
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="true">
+        <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOCARRITO.jpg" />
+    </ImageView>
+
+    <!-- Barra lateral -->
+    <Pane prefHeight="1080.0" prefWidth="277.0" styleClass="menu-container">
+        <ImageView fitHeight="50" fitWidth="191.0" layoutX="30.0" layoutY="30.0" preserveRatio="true" styleClass="logo-image">
+            <image>
+                <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOMIVALGAMER.png" />
+            </image>
+        </ImageView>
+
+        <HBox layoutX="20.0" layoutY="173.0" onMouseClicked="#handleInicioClick" styleClass="menu-item">
+            <ImageView fitHeight="24.0" fitWidth="20.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOINICIO.png" />
+                </image>
+            </ImageView>
+            <Label prefHeight="20.0" prefWidth="62.0" text="Inicio" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font>
+            </Label>
+        </HBox>
+
+        <HBox layoutX="20.0" layoutY="238.0" onMouseClicked="#handleBibliotecaClick" styleClass="menu-item">
+            <ImageView fitHeight="24.0" fitWidth="20.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBIBLIOTECA.png" />
+                </image>
+            </ImageView>
+            <Label prefHeight="20.0" prefWidth="62.0" text="Inicio" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font>
+            </Label>
+        </HBox>
+
+        <HBox layoutX="12.0" layoutY="303.0" onMouseClicked="#handleHistorialClick">
+            <ImageView fitHeight="22.0" fitWidth="33.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/HISTORIALCOMPRAS.png" />
+                </image>
+            </ImageView>
+            <Label text="Historial de compras" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font>
+            </Label>
+            <styleClass>
+                <String fx:value="menu-item" />
+            </styleClass>
+        </HBox>
+
+        <HBox layoutX="20.0" layoutY="368.0" onMouseClicked="#handleCarritoClick" styleClass="menu-item">
+            <ImageView fitHeight="17.0" fitWidth="23.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/MICARRITO1.png" />
+                </image>
+            </ImageView>
+            <Label text="Mi carrito" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font>
+            </Label>
+        </HBox>
+        <stylesheets>
+            <URL value="@styles.css" />
+            <URL value="@playstation-styles.css" />
+            <URL value="@Estilos.css" />
+        </stylesheets>
+    </Pane>
+
+    <!-- Contenido central -->
+    <center>
+        <VBox spacing="20" styleClass="main-content">
+            <!-- Título de la sección -->
+            <Label styleClass="history-title" text="Historial de Compras" />
+
+            <!-- Contenedor para los paneles de métodos de pago y transacciones -->
+            <HBox prefHeight="834.0" prefWidth="1617.0" spacing="20" styleClass="menu-container" VBox.vgrow="ALWAYS">
+                <!-- Panel de métodos de pago -->
+                <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
+
+                    <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
+                  <children>
+                     <Label styleClass="payment-owner" text="Correo Electronico">
+                        <font>
+                           <Font name="System Bold Italic" size="24.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="30.0" left="50.0" top="100.0" />
+                        </VBox.margin></Label>
+                     <Label styleClass="payment-owner" text="Nombre Completo">
+                        <font>
+                           <Font name="System Bold Italic" size="24.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="30.0" left="50.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Label styleClass="payment-owner" text="Cambiar contraseña">
+                        <font>
+                           <Font name="System Bold Italic" size="24.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets left="50.0" />
+                        </VBox.margin>
+                     </Label>
+                  </children>
+                    </VBox>
+                </VBox>
+
+                <!-- Panel de transacciones -->
+                <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
+                    <Label styleClass="panel-title" text="Transacciónes" />
+
+                    <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
+                        <!-- Encabezados de la tabla -->
+                        <HBox prefHeight="200.0" prefWidth="713.0" styleClass="transaction-header">
+                            <Label styleClass="transaction-date" text="24/12/2024" />
+                            <Label styleClass="transaction-game" text="TheLastofUsPartII" />
+                            <Label styleClass="transaction-card" text="**1234" />
+                            <Label styleClass="transaction-amount" text="184.000 COP" />
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                        </HBox>
+                       <Label styleClass="panel-title" text="Metodos de Pago" />
+                        <!-- Tarjeta de crédito existente -->
+                        <HBox styleClass="payment-card">
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Label styleClass="payment-type" text="Tarjeta Credito" />
+                                <Label styleClass="payment-owner" text="Juan Perez" />
+                                <Label styleClass="payment-number" text="****1234; exp: 06/28" />
+                            </VBox>
+                        </HBox>
+
+                        <!-- Botón para agregar nuevo método de pago -->
+                        <HBox alignment="CENTER" onMouseClicked="#AgregarMetodoPago" styleClass="add-payment-card">
+                            <Label styleClass="add-payment-icon" text="+" />
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
