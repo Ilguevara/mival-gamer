@@ -30,7 +30,7 @@ public class MivalGamerInterfaz extends Application {
             ));
 
             // Cargar la vista inicial (Login.fxml en este caso)
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Inicio.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Login.fxml"));
             Parent root = loader.load();  // Puede ser StackPane, BorderPane, etc.
 
             // Usar StackPane como contenedor general, no importa la raíz del FXML

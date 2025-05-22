@@ -69,16 +69,8 @@ public class LoginController {
         try {
             Usuario usuario = autentificacion.iniciarSesion(email, password);
             if (usuario != null) {
-                // Inicio de sesión exitoso: redirigir a Inicio.fxml
-                try {
-                    Parent inicioView = FXMLLoader.load(getClass().getResource("/Views/Inicio.fxml"));
-                    Scene scene = new Scene(inicioView);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    mostrarError("No se pudo cargar la vista de Inicio.");
-                }
+                // Inicio de sesión exitoso: cambiar la vista usando el método centralizado
+                mivalgamer.app.MivalGamerInterfaz.changeView("/Views/Inicio.fxml");
             } else {
                 mostrarError("Correo o contraseña incorrectos.");
             }
