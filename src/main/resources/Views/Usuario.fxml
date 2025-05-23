@@ -68,7 +68,7 @@
     </Pane>
 
     <VBox layoutX="300.0" layoutY="50.0" prefHeight="980.0" prefWidth="1580.0" spacing="20" styleClass="main-content">
-        <Label styleClass="history-title" text="Historial de Compras" />
+        <Label styleClass="history-title" text="Usuario" />
 
         <HBox spacing="20" VBox.vgrow="ALWAYS">
             <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
@@ -111,16 +111,43 @@
                 <Label styleClass="panel-title" text="Transacciónes" />
 
                 <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
-                    <HBox styleClass="transaction-header">
-                        <Label styleClass="transaction-date" text="24/12/2024" />
-                        <Label styleClass="transaction-game" text="The Last of Us PartII" />
-                        <Label styleClass="transaction-card" text="**1234" />
-                        <Label styleClass="transaction-amount" text="184.000 COP" />
-                  <VBox.margin>
-                     <Insets bottom="25.0" />
-                  </VBox.margin>
-                    </HBox>
-                   <Label styleClass="panel-title" text="Metodos de Pago" />
+
+                    <VBox spacing="10" styleClass="panel-content, transaction-header" VBox.vgrow="ALWAYS" >
+                        <HBox >
+                            <Label styleClass="transaction-date" text="24/12/2024" />
+                            <Label styleClass="transaction-game" text="The Last of Us Part II" />
+                            <Label styleClass="transaction-card" text="**1234" />
+                            <Label styleClass="transaction-amount" text="184.000 COP" />
+                            <VBox.margin>
+                                <Insets bottom="25.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox >
+                            <Label styleClass="transaction-date" text="20/04/2025" />
+                            <Label styleClass="transaction-game" text="Alien Insolation" />
+                            <Label styleClass="transaction-card" text="**1234" />
+                            <Label styleClass="transaction-amount" text="130.000 COP" />
+                            <VBox.margin>
+                                <Insets bottom="25.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <HBox>
+                            <Label styleClass="transaction-date" text="20/04/2025">
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin></Label>
+                            <Label styleClass="transaction-game" text="Luigi Mansion 3" />
+                            <Label styleClass="transaction-card" text="**1234" />
+                            <Label styleClass="transaction-amount" text="279.000 COP" />
+                            <padding>
+                                <Insets bottom="25.0" />
+                            </padding>
+                        </HBox>
+                    </VBox>
+
+
+                    <Label styleClass="panel-title" text="Metodos de Pago" />
                     <HBox styleClass="payment-card">
                         <VBox spacing="5" HBox.hgrow="ALWAYS">
                             <Label styleClass="payment-type" text="Tarjeta Credito" />

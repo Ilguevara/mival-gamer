@@ -9,10 +9,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import java.lang.String?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.HistorialCompraController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.HistorialCompraController">
     <stylesheets>
         <URL value="@styles.css" />
         <URL value="@playstation-styles.css" />
@@ -67,7 +65,7 @@
         </HBox>
     </Pane>
 
-    <VBox layoutX="300.0" layoutY="50.0" spacing="20" styleClass="main-content" prefWidth="1580.0" prefHeight="980.0">
+    <VBox layoutX="300.0" layoutY="50.0" prefHeight="980.0" prefWidth="1580.0" spacing="20" styleClass="main-content">
         <Label styleClass="history-title" text="Historial de Compras" />
 
         <HBox spacing="20" VBox.vgrow="ALWAYS">
@@ -83,7 +81,7 @@
                         </VBox>
                     </HBox>
 
-                    <HBox styleClass="add-payment-card" alignment="CENTER">
+                    <HBox alignment="CENTER" styleClass="add-payment-card">
                         <Label styleClass="add-payment-icon" text="+" />
                     </HBox>
                 </VBox>
@@ -92,18 +90,42 @@
             <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
                 <Label styleClass="panel-title" text="Transacciónes" />
 
-                <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
-                    <HBox styleClass="transaction-header">
+                <VBox spacing="10" styleClass="panel-content, transaction-header" VBox.vgrow="ALWAYS">
+                    <HBox>
                         <Label styleClass="transaction-date" text="15/03/2025" />
                         <Label styleClass="transaction-game" text="The Last of Us Part II" />
                         <Label styleClass="transaction-card" text="**1234" />
                         <Label styleClass="transaction-amount" text="184.000 COP" />
+                  <VBox.margin>
+                     <Insets bottom="25.0" />
+                  </VBox.margin>
                     </HBox>
-                    HBox styleClass="transaction-header">
-                        <Label styleClass="transaction-date" text="20/04/2025" />
+
+                    <HBox>
+                        <Label styleClass="transaction-date" text="20/04/2025">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
                         <Label styleClass="transaction-game" text="Alien Insolation" />
                         <Label styleClass="transaction-card" text="**1234" />
-                        <Label styleClass="transaction-amount" text="1.000 COP" />
+                        <Label styleClass="transaction-amount" text="130.000 COP" />
+                  <padding>
+                     <Insets bottom="25.0" />
+                  </padding>
+                    </HBox>
+
+                    <HBox>
+                        <Label styleClass="transaction-date" text="20/04/2025">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin></Label>
+                        <Label styleClass="transaction-game" text="Luigi Mansion 3" />
+                        <Label styleClass="transaction-card" text="**1234" />
+                        <Label styleClass="transaction-amount" text="279.000 COP" />
+                        <padding>
+                            <Insets bottom="25.0" />
+                        </padding>
+                    </HBox>
                 </VBox>
             </VBox>
         </HBox>
