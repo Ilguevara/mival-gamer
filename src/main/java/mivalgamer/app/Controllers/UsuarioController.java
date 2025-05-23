@@ -76,7 +76,7 @@ public class UsuarioController {
     private void handleHistorialClick(MouseEvent event) {
         try {
             // Cargar la vista de Carrito
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Carrito.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/HistorialCompra.fxml"));
             Parent carritoView = loader.load();
 
             // Cambiar la vista actual por la vista de Carrito

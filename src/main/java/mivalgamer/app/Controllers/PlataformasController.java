@@ -364,7 +364,7 @@ public class PlataformasController {
     private void handleHistorialComprasClick(MouseEvent event) {
         try {
             // Cargar la vista de Biblioteca
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/HistorialCompras.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/HistorialCompra.fxml"));
             Parent plataformaView = loader.load();
 
             // Cambiar la vista actual por la vista de plataforma
