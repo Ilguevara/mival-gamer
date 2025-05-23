@@ -1,5 +1,9 @@
 package mivalgamer.app.Controllers;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import mivalgamer.app.CartService;
 import mivalgamer.app.MivalGamerInterfaz;
 import javafx.event.ActionEvent;
@@ -16,29 +20,35 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mivalgamer.app.Videojuego;
+import mivalgamer.app.service.GameService;
 
-public class PlataformasController implements Initializable {
+public class PlataformasController {
 
     @FXML
-    private List<VBox> gameCards;
+    private GridPane gamesGrid = new GridPane();;
+
     @FXML
     private VBox cartItems;
     @FXML
     private Label totalAmount;
 
-    private List<GameItem> cartList = new ArrayList<>();
     private CartService cartService = CartService.getInstance();
 
+    private GameService gameService;
 
+    private int platformID = 0;
 
     public static class GameItem {
         private final String title;
@@ -49,6 +59,7 @@ public class PlataformasController implements Initializable {
             this.title = title;
             this.price = price;
         }
+
         public String getTitle() {
             return title;
         }
@@ -66,18 +77,64 @@ public class PlataformasController implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        if (gameCards != null) {
-            for (VBox gameCard : gameCards) {
-                Button addButton = findAddButton(gameCard);
-                if (addButton != null) {
-                    addButton.setOnAction(this::handleAddToCartButton);
+    @FXML
+    public void initialize() {
+
+        if (platformID == 0) {
+            gameService = new GameService();
+            try {
+                List<Videojuego> videojuegos = gameService.getAllVideoGames();
+                int column = 0;
+                int row = 0;
+
+                for (Videojuego juego : videojuegos) {
+                    VBox gameCard = createGameCard(juego);
+                    gamesGrid.add(gameCard, column, row);
+
+                    column++;
+                    if (column == 6) {
+                        column = 0;
+                        row++;
+                    }
                 }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         }
         updateCartView();
     }
+
+    private VBox createGameCard(Videojuego juego) {
+        VBox gameCard = new VBox();
+        gameCard.setStyle("-fx-background-color: #f0f0f0; -fx-padding: 10; -fx-alignment: center;");
+
+        String imageUrl = juego.getIcono().get(0);
+        Image gameImage = new Image(imageUrl);
+
+
+        ImageView gameImageView = new ImageView(gameImage);
+        gameImageView.setFitWidth(180);
+        gameImageView.setFitHeight(180);
+        gameImageView.setPreserveRatio(true);
+
+        Label gameTitle = new Label(juego.getTitulo());
+        gameTitle.setStyle("-fx-font-size: 14px; -fx-text-fill: #000;");
+
+        Label gamePrice = new Label(juego.getPrecio() + " COP");
+        gamePrice.setStyle("-fx-font-size: 12px; -fx-text-fill: #636363;");
+
+
+        Button addButton = new Button("+");
+        addButton.setOnAction(this::handleAddToCartButton);
+
+
+        HBox priceAndButton = new HBox(5, addButton, gamePrice);
+        priceAndButton.setStyle("-fx-alignment: center-left;");
+        gameCard.getChildren().addAll(gameImageView, gameTitle, priceAndButton);
+
+        return gameCard;
+    }
+
 
     @FXML
     public void handleAddToCartButton(ActionEvent event) {
@@ -156,8 +213,8 @@ public class PlataformasController implements Initializable {
         cartService.addItem(gameItem);
 
         if (cartItems.getChildren().size() == 1 &&
-                cartItems.getChildren().get(0) instanceof Label &&
-                ((Label)cartItems.getChildren().get(0)).getText().contains("no has agregado")) {
+            cartItems.getChildren().get(0) instanceof Label &&
+            ((Label) cartItems.getChildren().get(0)).getText().contains("no has agregado")) {
             cartItems.getChildren().clear();
         }
 
@@ -204,7 +261,7 @@ public class PlataformasController implements Initializable {
         totalAmount.setText(String.format("%.2f COP", cartService.getTotal()));
     }
 
-public void handleGameCardClick(MouseEvent mouseEvent) {
+    public void handleGameCardClick(MouseEvent mouseEvent) {
 
     }
 
@@ -239,6 +296,7 @@ public void handleGameCardClick(MouseEvent mouseEvent) {
             System.err.println("Error al cargar la vista de plataforma: " + e.getMessage());
         }
     }
+
     @FXML
     private void handleInicioClick(MouseEvent event) {
         try {
@@ -269,5 +327,9 @@ public void handleGameCardClick(MouseEvent mouseEvent) {
             e.printStackTrace();
             System.err.println("Error al cargar la vista de Carrito: " + e.getMessage());
         }
+    }
+
+    public void setPlatformID(int plataformaId) {
+        this.platformID = plataformaId;
     }
 }

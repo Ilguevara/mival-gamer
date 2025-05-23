@@ -1,4 +1,6 @@
 package mivalgamer.app;
+import mivalgamer.app.repository.GameRepository;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,8 @@ public class ItemPedido {
             stmt.setString(1, idPedido);
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    Videojuego juego = Videojuego.fromResultSet(conn, rs);
+                    GameRepository gameRepository = new GameRepository();
+                    Videojuego juego = gameRepository.fromResultSet(rs);
                     items.add(new ItemPedido(
                             rs.getString("id_pedido"),
                             juego,

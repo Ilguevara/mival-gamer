@@ -97,202 +97,26 @@
                 </StackPane>
 
                 <!-- Games Grid -->
-                <GridPane hgap="20" styleClass="games-grid" vgap="20">
-                    <columnConstraints>
-                        <ColumnConstraints percentWidth="16.66" />
-                        <ColumnConstraints percentWidth="16.66" />
-                        <ColumnConstraints percentWidth="16.66" />
-                        <ColumnConstraints percentWidth="16.66" />
-                        <ColumnConstraints percentWidth="16.66" />
-                        <ColumnConstraints percentWidth="16.66" />
-                    </columnConstraints>
+                <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" styleClass="main-content-scroll">
+                    <VBox styleClass="main-content">
+                        <GridPane fx:id="gamesGrid" hgap="20" vgap="20" styleClass="games-grid">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="16.66"/>
+                                <ColumnConstraints percentWidth="16.66"/>
+                                <ColumnConstraints percentWidth="16.66"/>
+                                <ColumnConstraints percentWidth="16.66"/>
+                                <ColumnConstraints percentWidth="16.66"/>
+                                <ColumnConstraints percentWidth="16.66"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
 
-                    <!-- Row 1 -->
-                    <VBox fx:id="gamerCard2" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/mario-kart-8-deluxe.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Mario Kart 8 Deluxe" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button fx:id="addButton_2" mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="184000.00 COP" />
-                        </HBox>
                     </VBox>
+                </ScrollPane>
 
-                    <VBox fx:id="gameCard36" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/TLOU2.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="The Last of Us II" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="180000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard4" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/DARKSOULS.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Dark Souls" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="66950.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard29" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/STARFIELD.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Starfield" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="279000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard30" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="4" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIO3DWORLD.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Super Mario 3D World" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="279000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard38" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="5" GridPane.rowIndex="0">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/UNTILDAWN.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Until Dawn" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="219000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <!-- Row 2 -->
-                    <VBox fx:id="gameCard21" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ORI.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Ori And The Blind Forest" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="42000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard33" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ODYSSEY.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Super Mario Odyssey" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="279000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard28" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SPIDER.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Spider Man 2" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="219000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard3" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/CUPHEAD.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Cuphead" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="40000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <VBox fx:id="gameCard40" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIOPARTYJAMBOREE.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Super Mario Party Jamboree" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="219000.00 COP" />
-                        </HBox>
-                    </VBox>
-                    <VBox fx:id="gameCard17" onMouseClicked="#handleGameCardClick" styleClass="game-card" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                        <StackPane>
-                            <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
-                                <image>
-                                    <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MINECRAFT.png" />
-                                </image>
-                            </ImageView>
-                        </StackPane>
-                        <Label styleClass="game-title" text="Minecraft" />
-                        <HBox alignment="CENTER_LEFT" spacing="5">
-                            <Button mnemonicParsing="false" onAction="#handleAddToCartButton" opacity="0.63" styleClass="add-button" text="+" textFill="#636363" />
-                            <Label styleClass="game-price" text="184000.00 COP" />
-                        </HBox>
-                    </VBox>
-
-                    <rowConstraints>
-                        <RowConstraints />
-                        <RowConstraints />
-                    </rowConstraints>
-                </GridPane>
             </VBox>
         </ScrollPane>
     </center>

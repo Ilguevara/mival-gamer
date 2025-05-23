@@ -169,7 +169,16 @@ public class MainController implements Initializable {
     private void navigateToPc() {
         try {
             System.out.println("Intentando navegar a PC...");
-            mivalgamer.app.MivalGamerInterfaz.changeView("/Views/Pc.fxml");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Pc.fxml"));
+            Parent playStationView = loader.load();
+
+            // Obtener el controlador y pasarle el ID o datos
+            PlataformasController controller = loader.getController();
+            controller.setPlatformID(4);
+
+            // Cambiar la vista
+            MivalGamerInterfaz.changeView(playStationView);
+
             System.out.println("Navegación a PC completada");
         } catch (Exception e) {
             System.err.println("Error al cargar la vista de PC: " + e.getMessage());
@@ -180,7 +189,16 @@ public class MainController implements Initializable {
     private void navigateToNintendo() {
         try {
             System.out.println("Intentando navegar a Nintendo...");
-            mivalgamer.app.MivalGamerInterfaz.changeView("/Views/Nintendo.fxml");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Nintendo.fxml"));
+            Parent playStationView = loader.load();
+
+            // Obtener el controlador y pasarle el ID o datos
+            PlataformasController controller = loader.getController();
+            controller.setPlatformID(3);
+
+            // Cambiar la vista
+            MivalGamerInterfaz.changeView(playStationView);
+
             System.out.println("Navegación a Nintendo completada");
         } catch (Exception e) {
             System.err.println("Error al cargar la vista de Nintendo: " + e.getMessage());
@@ -191,7 +209,16 @@ public class MainController implements Initializable {
     private void navigateToXbox() {
         try {
             System.out.println("Intentando navegar a Xbox...");
-            mivalgamer.app.MivalGamerInterfaz.changeView("/Views/Xbox.fxml");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Xbox.fxml"));
+            Parent playStationView = loader.load();
+
+            // Obtener el controlador y pasarle el ID o datos
+            PlataformasController controller = loader.getController();
+            controller.setPlatformID(2);
+
+            // Cambiar la vista
+            MivalGamerInterfaz.changeView(playStationView);
+
             System.out.println("Navegación a Xbox completada");
         } catch (Exception e) {
             System.err.println("Error al cargar la vista de Xbox: " + e.getMessage());
@@ -202,9 +229,20 @@ public class MainController implements Initializable {
     private void navigateToPlayStation() {
         try {
             System.out.println("Intentando navegar a PlayStation...");
-            mivalgamer.app.MivalGamerInterfaz.changeView("/Views/PlayStation.fxml");
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/PlayStation.fxml"));
+            Parent playStationView = loader.load();
+
+            // Obtener el controlador y pasarle el ID o datos
+            PlataformasController controller = loader.getController();
+            controller.setPlatformID(1);
+
+            // Cambiar la vista
+            MivalGamerInterfaz.changeView(playStationView);
+
             System.out.println("Navegación a PlayStation completada");
-        } catch (Exception e) {
+
+        } catch (IOException e) {
             System.err.println("Error al cargar la vista de PlayStation: " + e.getMessage());
             e.printStackTrace();
         }

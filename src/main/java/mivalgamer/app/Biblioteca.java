@@ -1,5 +1,7 @@
 package mivalgamer.app;
 
+import mivalgamer.app.repository.GameRepository;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -55,7 +57,8 @@ public class Biblioteca {
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Videojuego juego = mapVideojuegoFromResultSet(rs);
+                GameRepository gameRepository = new GameRepository();
+                Videojuego juego = gameRepository.fromResultSet(rs);
                 LocalDateTime fechaCompra = rs.getTimestamp("fecha_compra").toLocalDateTime();
                 String keyActivacion = rs.getString("key_activacion");
                 items.add(new ItemBiblioteca(juego, fechaCompra, keyActivacion));
@@ -133,7 +136,8 @@ public class Biblioteca {
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Videojuego juego = mapVideojuegoFromResultSet(rs);
+                GameRepository gameRepository = new GameRepository();
+                Videojuego juego = gameRepository.fromResultSet(rs);
                 LocalDateTime fechaCompra = rs.getTimestamp("fecha_compra").toLocalDateTime();
                 String keyActivacion = rs.getString("key_activacion");
                 items.add(new ItemBiblioteca(juego, fechaCompra, keyActivacion));
@@ -160,25 +164,6 @@ public class Biblioteca {
             LOGGER.log(Level.SEVERE, "Error al obtener plataformas del videojuego", ex);
             return "Desconocida";
         }
-    }
-
-    private Videojuego mapVideojuegoFromResultSet(ResultSet rs) throws SQLException {
-        // Se adapta a la nueva firma del constructor de Videojuego (sin idPlataforma y con los nuevos campos)
-        return new Videojuego(
-                rs.getLong("id_videojuego"),
-                rs.getString("titulo"),
-                rs.getString("estudio"),
-                rs.getLong("id_genero"),
-                rs.getString("descripcion"),
-                rs.getDouble("precio"),
-                rs.getDouble("precio_original"),
-                rs.getBoolean("descuento_aplicado"),
-                EstadoVideojuego.fromString(rs.getString("estado")),
-                rs.getString("icono"),
-                rs.getString("portada"),
-                rs.getString("contenido_visual"),
-                rs.getInt("stock")
-        );
     }
 
     public boolean contieneJuego(Videojuego juego) {

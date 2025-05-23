@@ -1,5 +1,7 @@
 package mivalgamer.app;
 
+import mivalgamer.app.service.GameService;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,7 +18,7 @@ public class PedidoFactory {
                                                  Usuario usuario) throws SQLException {
         connection.setAutoCommit(false);
         try {
-            List<ItemPedido> itemsPedido = convertirItems(connection, itemsCarrito);
+            List<ItemPedido> itemsPedido = convertirItems(itemsCarrito);
             double descuento = calcularDescuento(connection, codigoDescuento, itemsPedido);
 
             Pedido pedido = new Pedido(
@@ -62,10 +64,11 @@ public class PedidoFactory {
         return "PED-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
     }
 
-    private static List<ItemPedido> convertirItems(Connection conn, List<ItemCarrito> itemsCarrito) throws SQLException {
+    private static List<ItemPedido> convertirItems(List<ItemCarrito> itemsCarrito) throws SQLException {
         List<ItemPedido> itemsPedido = new ArrayList<>();
         for (ItemCarrito item : itemsCarrito) {
-            Videojuego juego = Videojuego.obtenerPorId(conn, item.getVideojuego().getIdVideojuego());
+            GameService gameService = new GameService();
+            Videojuego juego = gameService.getVideoGameByID(item.getVideojuego().getIdVideojuego());
             itemsPedido.add(new ItemPedido(
                     null, // id_item se generará automáticamente
                     juego,

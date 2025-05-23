@@ -1,4 +1,6 @@
 package mivalgamer.app;
+import mivalgamer.app.repository.GameRepository;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -76,21 +78,8 @@ public class CarritoCompra {
 
 
     private ItemCarrito mapearItem(ResultSet rs) throws SQLException {
-        Videojuego videojuego = new Videojuego(
-                rs.getLong("id_videojuego"),
-                rs.getString("titulo"),
-                rs.getString("estudio"),
-                rs.getLong("id_genero"),
-                rs.getString("descripcion"),
-                rs.getDouble("precio"),
-                rs.getDouble("precio_original"),
-                rs.getBoolean("descuento_aplicado"),
-                EstadoVideojuego.fromString(rs.getString("estado")),
-                rs.getString("icono"),
-                rs.getString("portada"),
-                rs.getString("contenido_visual"),
-                rs.getInt("stock")
-        );
+        GameRepository gameRepository = new GameRepository();
+        Videojuego videojuego = gameRepository.fromResultSet(rs);
 
         int cantidad = rs.getInt("cantidad");
         double subtotal = rs.getDouble("subtotal");
