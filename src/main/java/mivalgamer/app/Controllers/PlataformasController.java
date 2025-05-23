@@ -109,7 +109,7 @@ public class PlataformasController {
         gameCard.setStyle("-fx-background-color: #f0f0f0; -fx-padding: 10; -fx-alignment: center;");
 
         String imageUrl = juego.getIcono().get(0);
-        Image gameImage = new Image(imageUrl);
+        Image gameImage = new Image(imageUrl, true);
 
 
         ImageView gameImageView = new ImageView(gameImage);
@@ -117,11 +117,20 @@ public class PlataformasController {
         gameImageView.setFitHeight(180);
         gameImageView.setPreserveRatio(true);
 
+        gameImage.progressProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal.doubleValue() == 1.0) {
+                gameImageView.setImage(gameImage);
+            }
+        });
+
+
         Label gameTitle = new Label(juego.getTitulo());
         gameTitle.setStyle("-fx-font-size: 14px; -fx-text-fill: #000;");
+        gameTitle.getStyleClass().add("game-title");
 
         Label gamePrice = new Label(juego.getPrecio() + " COP");
         gamePrice.setStyle("-fx-font-size: 12px; -fx-text-fill: #636363;");
+        gamePrice.getStyleClass().add("game-price");
 
 
         Button addButton = new Button("+");
@@ -130,6 +139,9 @@ public class PlataformasController {
 
         HBox priceAndButton = new HBox(5, addButton, gamePrice);
         priceAndButton.setStyle("-fx-alignment: center-left;");
+        priceAndButton.setAlignment(Pos.CENTER_LEFT);
+
+
         gameCard.getChildren().addAll(gameImageView, gameTitle, priceAndButton);
 
         return gameCard;
@@ -310,6 +322,22 @@ public class PlataformasController {
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println("Error al cargar la vista de inicio: " + e.getMessage());
+        }
+    }
+
+    @FXML
+    private void handleUsuarioClick(MouseEvent event) {
+        try {
+            // Cargar la vista de Carrito
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Usuario.fxml"));
+            Parent UsuarioView = loader.load();
+
+            // Cambiar la vista actual por la vista de Carrito
+            mivalgamer.app.MivalGamerInterfaz.changeView(UsuarioView);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar la vista de Carrito: " + e.getMessage());
         }
     }
 

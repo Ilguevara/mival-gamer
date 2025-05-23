@@ -1,136 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
 
-<HBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.HistorialCompraController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.HistorialCompraController">
     <stylesheets>
         <URL value="@styles.css" />
         <URL value="@playstation-styles.css" />
         <URL value="@Estilos.css" />
     </stylesheets>
 
-    <!-- Barra lateral -->
-    <Pane prefHeight="1080.0" prefWidth="277.0" styleClass="menu-container">
-        <ImageView fitHeight="50" fitWidth="191.0" layoutX="30.0" layoutY="30.0" preserveRatio="true" styleClass="logo-image">
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="true">
+        <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOCARRITO.jpg" />
+    </ImageView>
+
+    <Pane prefHeight="1080.0" prefWidth="277.0" styleClass="barralateral">
+        <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="30.0" layoutY="30.0" preserveRatio="true" styleClass="logo-image">
             <image>
                 <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOMIVALGAMER.png" />
             </image>
         </ImageView>
 
         <HBox layoutX="20.0" layoutY="173.0" onMouseClicked="#handleInicioClick" styleClass="menu-item">
-            <ImageView fitHeight="24.0" fitWidth="20.0" styleClass="icon">
+            <ImageView fitHeight="18.0" fitWidth="18.0" styleClass="icon">
                 <image>
                     <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOINICIO.png" />
                 </image>
             </ImageView>
-            <Label prefHeight="20.0" prefWidth="62.0" text="Inicio" textFill="WHITE">
-                <font>
-                    <Font name="MuseoSans-700" size="17.0" />
-                </font>
-            </Label>
+            <Label text="Inicio" textFill="WHITE" />
         </HBox>
 
         <HBox layoutX="20.0" layoutY="238.0" onMouseClicked="#handleBibliotecaClick" styleClass="menu-item">
-            <ImageView fitHeight="24.0" fitWidth="20.0" styleClass="icon">
+            <ImageView fitHeight="18.0" fitWidth="18.0" styleClass="icon">
                 <image>
                     <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBIBLIOTECA.png" />
                 </image>
             </ImageView>
-            <Label prefHeight="20.0" prefWidth="62.0" text="Inicio" textFill="WHITE">
-                <font>
-                    <Font name="MuseoSans-700" size="17.0" />
-                </font>
-            </Label>
+            <Label text="Biblioteca" textFill="WHITE" />
         </HBox>
 
-        <HBox layoutX="12.0" layoutY="303.0" onMouseClicked="#handleHistorialClick">
-            <ImageView fitHeight="22.0" fitWidth="33.0" styleClass="icon">
+        <HBox layoutX="20.0" layoutY="303.0" onMouseClicked="#handleHistorialClick" styleClass="menu-item">
+            <ImageView fitHeight="18.0" fitWidth="18.0" styleClass="icon">
                 <image>
                     <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/HISTORIALCOMPRAS.png" />
                 </image>
             </ImageView>
-            <Label text="Historial de compras" textFill="WHITE">
-                <font>
-                    <Font name="MuseoSans-700" size="17.0" />
-                </font>
-            </Label>
-            <styleClass>
-                <String fx:value="menu-item" />
-            </styleClass>
+            <Label text="Historial de compras" textFill="WHITE" />
         </HBox>
 
         <HBox layoutX="20.0" layoutY="368.0" onMouseClicked="#handleCarritoClick" styleClass="menu-item">
-            <ImageView fitHeight="17.0" fitWidth="23.0" styleClass="icon">
+            <ImageView fitHeight="18.0" fitWidth="18.0" styleClass="icon">
                 <image>
                     <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/MICARRITO1.png" />
                 </image>
             </ImageView>
-            <Label text="Mi carrito" textFill="WHITE">
-                <font>
-                    <Font name="MuseoSans-700" size="17.0" />
-                </font>
-            </Label>
+            <Label text="Mi carrito" textFill="WHITE" />
         </HBox>
-      <stylesheets>
-         <URL value="@styles.css" />
-         <URL value="@playstation-styles.css" />
-         <URL value="@Estilos.css" />
-      </stylesheets>
     </Pane>
 
-    <!-- Contenido central -->
-    <StackPane HBox.hgrow="ALWAYS">
-        <!-- Fondo -->
-        <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="true">
-            <image>
-                <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOCARRITO.jpg" />
-            </image>
-        </ImageView>
-        <!-- Contenido -->
-        <Pane>
-            <VBox spacing="20" styleClass="main-content">
-                <Label styleClass="history-title" text="Historial de Compras" />
+    <VBox layoutX="300.0" layoutY="50.0" spacing="20" styleClass="main-content" prefWidth="1580.0" prefHeight="980.0">
+        <Label styleClass="history-title" text="Historial de Compras" />
 
-                <HBox prefHeight="834.0" prefWidth="1320.0" spacing="20" styleClass="menu-container" VBox.vgrow="ALWAYS">
-                    <!-- Panel de métodos de pago -->
-                    <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
-                        <Label styleClass="panel-title" text="Metodos de Pago" />
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
+                <Label styleClass="panel-title" text="Metodos de Pago" />
 
-                        <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
-                            <HBox styleClass="payment-card">
-                                <VBox spacing="5" HBox.hgrow="ALWAYS">
-                                    <Label styleClass="payment-type" text="Tarjeta Credito" />
-                                    <Label styleClass="payment-owner" text="Juan Perez" />
-                                    <Label styleClass="payment-number" text="****1234; exp: 06/28" />
-                                </VBox>
-                            </HBox>
-
-                            <HBox alignment="CENTER" styleClass="add-payment-card">
-                                <Label styleClass="add-payment-icon" text="+" />
-                            </HBox>
+                <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
+                    <HBox styleClass="payment-card">
+                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                            <Label styleClass="payment-type" text="Tarjeta Credito" />
+                            <Label styleClass="payment-owner" text="Ivy Guevara" />
+                            <Label styleClass="payment-number" text="****1234; exp: 06/28" />
                         </VBox>
-                    </VBox>
+                    </HBox>
 
-                    <!-- Panel de transacciones -->
-                    <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
-                        <Label styleClass="panel-title" text="Transacciónes" />
-
-                        <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
-                            <HBox styleClass="transaction-header">
-                                <Label styleClass="transaction-date" text="24/12/2024" />
-                                <Label styleClass="transaction-game" text="TheLastofUsPartII" />
-                                <Label styleClass="transaction-card" text="**1234" />
-                                <Label styleClass="transaction-amount" text="184.000 COP" />
-                            </HBox>
-                        </VBox>
-                    </VBox>
-                </HBox>
+                    <HBox styleClass="add-payment-card" alignment="CENTER">
+                        <Label styleClass="add-payment-icon" text="+" />
+                    </HBox>
+                </VBox>
             </VBox>
-        </Pane>
-    </StackPane>
-</HBox>
+
+            <VBox styleClass="panel-container" HBox.hgrow="ALWAYS">
+                <Label styleClass="panel-title" text="Transacciónes" />
+
+                <VBox spacing="10" styleClass="panel-content" VBox.vgrow="ALWAYS">
+                    <HBox styleClass="transaction-header">
+                        <Label styleClass="transaction-date" text="15/03/2025" />
+                        <Label styleClass="transaction-game" text="The Last of Us Part II" />
+                        <Label styleClass="transaction-card" text="**1234" />
+                        <Label styleClass="transaction-amount" text="184.000 COP" />
+                    </HBox>
+                    HBox styleClass="transaction-header">
+                        <Label styleClass="transaction-date" text="20/04/2025" />
+                        <Label styleClass="transaction-game" text="Alien Insolation" />
+                        <Label styleClass="transaction-card" text="**1234" />
+                        <Label styleClass="transaction-amount" text="1.000 COP" />
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

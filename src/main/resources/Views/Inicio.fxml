@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.geometry.Insets?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.PlataformasController">
     <stylesheets>
         <URL value="@styles.css" />
@@ -87,6 +88,28 @@
                 <font>
                     <Font name="MuseoSans-700" size="17.0" />
                 </font></Label>
+        </HBox>
+
+        <HBox onMouseClicked="#handleUsuarioClick" styleClass="menu-item">
+            <ImageView fitHeight="36.0" fitWidth="35.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/USUARIO.png" />
+                </image>
+            </ImageView>
+            <Label text="Usuario" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets top="200.0" />
+                </opaqueInsets>
+            </Label>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="500.0" />
+            </VBox.margin>
         </HBox>
     </Pane>
 
