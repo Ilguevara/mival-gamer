@@ -109,7 +109,7 @@
             <StackPane>
                 <ImageView fitHeight="194.0" fitWidth="194" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/mario-kart-8-deluxe.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIOKART8DELUXE.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -149,7 +149,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/METROIDREAD.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/METROIDDREAD.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -183,7 +183,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIO3DWORLD.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERMARIO3DWORLD.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -200,7 +200,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIOWONDER.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERMARIOBROSWONDER.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -217,7 +217,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIOMAKER2.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERMARIOMAKER2.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -234,7 +234,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ODYSSEY.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERMARIOODYSSEY.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -251,7 +251,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERSMASHULTIMATE.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERSMASHBROSULTIMATE.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -285,7 +285,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MARIOPARTYJAMBOREE.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SUPERMARIOPARTYJAMBOREE.png" />
                     </image>
                 </ImageView>
             </StackPane>

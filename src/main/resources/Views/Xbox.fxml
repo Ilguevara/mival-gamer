@@ -114,7 +114,7 @@
             <StackPane>
                 <ImageView fitHeight="194.0" fitWidth="194" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ALIEN.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ALIENISOLATION.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -171,7 +171,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/halo-infinite.jpg" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/HALOINFINITE.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -188,7 +188,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/HALLBLADE2.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/HELLBLADE2.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -239,7 +239,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ORI.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ORIANDTHEBLINDFOREST.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -273,7 +273,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MCC.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MASTERCHIEFCOLLECTION.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -290,7 +290,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/INDIANAJONES.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/INDIANAJONESTHEGREATCIRCLE.png" />
                     </image>
                 </ImageView>
             </StackPane>

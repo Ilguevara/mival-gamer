@@ -144,7 +144,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/TLOU1.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/TLOUI.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -159,7 +159,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RE4.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RESIDENTEVIL4.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -189,7 +189,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RATCHETCLANK.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RATCHETCLANKRIFTAPART.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -204,7 +204,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SPIDER.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SPIDERMAN2.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -265,7 +265,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/GHOST.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/GHOSTOFTSUSHIMA.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -280,7 +280,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/GODOFWARAGNAROK.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/GODOFWARRAGNAROK.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -295,7 +295,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/TLOU2.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/TLOUII.png" />
                     </image>
                 </ImageView>
             </StackPane>

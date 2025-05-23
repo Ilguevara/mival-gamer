@@ -37,7 +37,7 @@ import mivalgamer.app.service.GameService;
 public class PlataformasController {
 
     @FXML
-    private GridPane gamesGrid = new GridPane();;
+    private GridPane gamesGrid = new GridPane();
 
     @FXML
     private VBox cartItems;
@@ -213,8 +213,8 @@ public class PlataformasController {
         cartService.addItem(gameItem);
 
         if (cartItems.getChildren().size() == 1 &&
-            cartItems.getChildren().get(0) instanceof Label &&
-            ((Label) cartItems.getChildren().get(0)).getText().contains("no has agregado")) {
+                cartItems.getChildren().get(0) instanceof Label &&
+                ((Label)cartItems.getChildren().get(0)).getText().contains("no has agregado")) {
             cartItems.getChildren().clear();
         }
 
@@ -331,5 +331,20 @@ public class PlataformasController {
 
     public void setPlatformID(int plataformaId) {
         this.platformID = plataformaId;
+    }
+    @FXML
+    private void handleHistorialComprasClick(MouseEvent event) {
+        try {
+            // Cargar la vista de Biblioteca
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/HistorialCompras.fxml"));
+            Parent plataformaView = loader.load();
+
+            // Cambiar la vista actual por la vista de plataforma
+            mivalgamer.app.MivalGamerInterfaz.changeView(plataformaView);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar la vista de plataforma: " + e.getMessage());
+        }
     }
 }

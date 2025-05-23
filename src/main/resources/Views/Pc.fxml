@@ -176,7 +176,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/INDIANAJONES.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/INDIANAJONESTHEGREATCIRCLE.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -193,7 +193,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ONEPIECE.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/ONEPIECEPIRATESWARRIORS4.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -210,7 +210,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/POPPY4.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/POPPYPLAYTIME4.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -244,7 +244,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/PRINCEPER.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/PRINCEOFPERSIATHELASTCROWN.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -261,7 +261,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SHADOWTOMBRAIDER.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/SHADOWOFTHETOMBRAIDER.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -278,7 +278,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RE4.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/RESIDENTEVIL4.png" />
                     </image>
                 </ImageView>
             </StackPane>
@@ -295,7 +295,7 @@
             <StackPane>
                 <ImageView fitHeight="180" fitWidth="180" preserveRatio="false">
                     <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/MWII.png" />
+                        <Image url="@../RecursosGlobales/imagenes segun interfaces/juegos/CALLOFDUTYMODERNWARFAREIII.png" />
                     </image>
                 </ImageView>
             </StackPane>

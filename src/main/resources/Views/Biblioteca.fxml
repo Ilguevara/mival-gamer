@@ -1,112 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.BibliotecaController">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mivalgamer.app.Controllers.BibliotecaController">
     <stylesheets>
         <URL value="@styles.css" />
         <URL value="@playstation-styles.css" />
     </stylesheets>
 
-    <!-- Capa de fondo: Imagen -->
+    <!-- FONDO Y TEXTOS -->
+
     <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="true">
-        <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOPRINCIPAL.jpg" />
+        <Image url="@../RecursosGlobales/imagenes segun interfaces/fondos/FONDOCARRITO.jpg" />
     </ImageView>
+    <Label layoutX="330.0" layoutY="50.0" prefHeight="81.0" prefWidth="424.0" text="Mi Biblioteca" textFill="WHITE">
+        <font>
+            <Font name="MuseoSans-900" size="57" />
+        </font>
+    </Label>
+    <Label layoutX="330.0" layoutY="180.0" opacity="0.59" prefHeight="81.0" prefWidth="424.0" text="Mostrando juegos adquiridos" textFill="WHITE">
+        <font>
+            <Font name="MuseoSans-700" size="24.0" />
+        </font>
+    </Label>
 
-    <!-- Left Sidebar -->
-    <left>
-        <VBox styleClass="sidebar" VBox.vgrow="ALWAYS">
-            <HBox styleClass="logo">
-                <ImageView fitHeight="50" fitWidth="150" preserveRatio="true" styleClass="logo-image">
-                    <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOMIVALGAMER.png" />
-                    </image>
-                </ImageView>
-            </HBox>
-            <HBox styleClass="search-bar">
-                <ImageView fitHeight="14" fitWidth="14" styleClass="icon">
-                    <image>
-                        <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBUSCAR.png" />
-                    </image>
-                </ImageView>
-                <TextField promptText="Qué deseas buscar?" />
-            </HBox>
+    <!-- BARRA LATERAL -->
 
-            <VBox styleClass="menu">
-                <HBox onMouseClicked="#handleInicioClick" styleClass="menu-item">
-                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
-                        <image>
-                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOINICIO.png" />
-                        </image>
-                    </ImageView>
-                    <Label text="Inicio" textFill="WHITE" />
-                </HBox>
+    <Pane prefHeight="1080.0" prefWidth="277.0" styleClass="barralateral">
+        <ImageView fitHeight="50" fitWidth="191.0" layoutX="30.0" layoutY="30.0" preserveRatio="true" styleClass="logo-image">
+            <image>
+                <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOMIVALGAMER.png" />
+            </image>
+        </ImageView>
 
-                <HBox onMouseClicked="#handlePlataformaClick" styleClass="menu-item, active">
-                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
-                        <image>
-                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOPLATAFORMAS.png" />
-                        </image>
-                    </ImageView>
-                    <Label text="Plataformas" textFill="WHITE" />
-                </HBox>
+        <HBox layoutX="20.0" layoutY="100.0" prefHeight="36.0" prefWidth="230.0" styleClass="search-bar">
+            <ImageView fitHeight="14" fitWidth="14" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBUSCAR.png" />
+                </image>
+            </ImageView>
+            <TextField promptText="Qué deseas buscar?" />
+        </HBox>
 
-                <HBox styleClass="menu-item" onMouseClicked="#handleBibliotecaClick">
-                    <ImageView fitHeight="18" fitWidth="18" styleClass="icon">
-                        <image>
-                            <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBIBLIOTECA.png" />
-                        </image>
-                    </ImageView>
-                    <Label text="Biblioteca" textFill="WHITE" />
-                </HBox>
-            </VBox>
-        </VBox>
-    </left>
-    <!-- Main Content -->
-    <center>
-        <StackPane>
-            <!-- Content Overlay -->
-            <VBox prefHeight="318.0" prefWidth="1073.0" styleClass="main-content">
-                <!-- Header -->
-                <HBox styleClass="header">
-                    <children>
-                        <Label styleClass="page-title" text="   Mi Biblioteca " textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="42.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </HBox>
+        <HBox layoutX="20.0" layoutY="173.0" onMouseClicked="#handleInicioClick" styleClass="menu-item">
+            <ImageView fitHeight="24.0" fitWidth="20.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOINICIO.png" />
+                </image>
+            </ImageView>
+            <Label prefHeight="20.0" prefWidth="62.0" text="Inicio" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font></Label>
+        </HBox>
 
-                <!-- Library Section -->
-                <VBox styleClass="library-section">
-                    <HBox styleClass="section-header">
-                        <Label styleClass="section-title" />
-                    </HBox>
-                </VBox>
+        <HBox layoutX="12.0" layoutY="238.0" onMouseClicked="#handlePlataformaClick">
+            <ImageView fitHeight="22.0" fitWidth="33.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOPLATAFORMAS.png" />
+                </image>
+            </ImageView>
+            <Label text="Plataformas" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font></Label>
+            <styleClass>
+                <String fx:value="menu-item" />
+            </styleClass>
+        </HBox>
 
-                <!-- Nuevo VBox agregado -->
-                <VBox opacity="0.18" prefHeight="200.0" prefWidth="1074.0" style="-fx-background-color: #1a4d4d; -fx-padding: 20px;" VBox.vgrow="ALWAYS">
-                    <padding>
-                        <Insets bottom="10" left="10" right="10" top="10" />
-                    </padding>
-                    <children>
-                        <AnchorPane prefHeight="146.0" prefWidth="997.0" />
-                    </children>
-                </VBox>
-                <Label styleClass="results-count" />
-            </VBox>
-        </StackPane>
-    </center>
-</BorderPane>
+        <HBox layoutX="20.0" layoutY="298.0" onMouseClicked="#handleBibliotecaClick" styleClass="menu-item">
+            <ImageView fitHeight="17.0" fitWidth="23.0" styleClass="icon">
+                <image>
+                    <Image url="@../RecursosGlobales/imagenes segun interfaces/iconos/LOGOBIBLIOTECA.png" />
+                </image>
+            </ImageView>
+            <Label text="Biblioteca" textFill="WHITE">
+                <font>
+                    <Font name="MuseoSans-700" size="17.0" />
+                </font></Label>
+        </HBox>
+    </Pane>
+
+    <Pane layoutX="330.0" layoutY="268.0" prefHeight="767.0" prefWidth="1545" styleClass="barracentral" />
+
+
+</AnchorPane>
